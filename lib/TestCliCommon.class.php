@@ -14,10 +14,9 @@ class TestCliCommon {
   }
 
   /**
-   * Отображает все, существующие в среде тесты
+   * Shows all available tests
    */
   function lst() {
-    $this->getTestLibs();
     $columns = [[],[],[],[]];
     $columns[0][] = 'tst proj g {name}:';
     foreach ((new TestRunnerProject('dummy'))->_g() as $class) {
@@ -26,6 +25,9 @@ class TestCliCommon {
     $columns[1][] ='tst ngn run:';
     foreach ((new TestRunnerNgn)->_getClasses() as $class) {
       $columns[1][] = ClassCore::classToName('Test', $class);
+    }
+    foreach ($this->getTestLibs() as $name) {
+      $columns[2][] = "tst lib $name";
     }
     print Cli::columns($columns, true);
   }

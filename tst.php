@@ -17,6 +17,6 @@ if (isset($_SERVER['argv'][1]) and ($_SERVER['argv'][1] == 'proj' or $_SERVER['a
 }
 else {
   $includes = 'tst';
-  if (isset($_SERVER['argv'][1]) and $_SERVER['argv'][1] == 'lib') $includes = ','.$_SERVER['argv'][2];
+  if (isset($_SERVER['argv'][1]) and $_SERVER['argv'][1] == 'lib') $includes .= ','.$_SERVER['argv'][2];
   print `php $run "new CliTestRunner('$params')" $includes`;
 }
