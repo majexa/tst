@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Запуск тестов фреймворка
+ * Test runner for: Framework Core Tests
  */
 class TestRunnerNgn extends TestRunnerAbstract {
 
@@ -13,7 +13,7 @@ class TestRunnerNgn extends TestRunnerAbstract {
   }
 
   /**
-   * Запускает все тесты ядра
+   * Running all core tests
    */
   function run() {
     $this->_run($this->getClasses());

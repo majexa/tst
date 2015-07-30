@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Запуск тестов библиотек на уровне проекта
+ * Test runner for: Standalone Libs (project envirnment)
  */
 class TestRunnerPlib extends TestRunnerLib {
 

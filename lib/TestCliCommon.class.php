@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Прикладные команды для работы с тестами
+ * Usefull commands for working with tests
  */
 class TestCliCommon {
 

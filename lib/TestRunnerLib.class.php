@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Запуск тестов библиотек
+ * Test runner for: Standalone Libs
  */
 class TestRunnerLib extends TestRunnerNgn {
 

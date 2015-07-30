@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Запуск тестов на уровне проекта
+ * Test runner for: Projects Envirnments Tests
  */
 class TestRunnerProject extends TestRunnerAbstract {
 
