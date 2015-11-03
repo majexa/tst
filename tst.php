@@ -9,7 +9,11 @@ if (isset($_SERVER['argv'][1]) and ($_SERVER['argv'][1] == 'proj' or $_SERVER['a
     throw new Exception('projectName param #3 not defined. cmd: '.implode(' ',$_SERVER['argv']));
   }
   if ($_SERVER['argv'][1] == 'proj' and $_SERVER['argv'][2] == 'g' and $_SERVER['argv'][3] == 'test') {
-    print `$pm localServer createTestProject common`;
+    system("$pm localServer createTestProject common", $exitCode);
+    if ($exitCode) {
+      system("$pm localServer deleteProject test");
+      return;
+    }
   }
   $offset = $_SERVER['argv'][1] == 'plib' ? -1 : 0;
   if ($_SERVER['argv'][1] == 'plib') $includes = ' '.$_SERVER['argv'][4 + $offset];
