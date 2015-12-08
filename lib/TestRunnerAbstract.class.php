@@ -61,7 +61,7 @@ class TestRunnerAbstract {
 
   protected function _run(array $classes) {
     output("running tests: ".implode(', ', $classes));
-    output("--=--");
+    output("-t=t-");
     foreach ($classes as $class) {
       $this->addTestSuite($class);
     }
