@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Usefull commands for working with tests
+ * Useful commands for working with tests
  */
 class TestCliCommon {
 
@@ -70,10 +70,7 @@ class TestCliCommon {
   function g($filterNames = null) {
     $pm = 'php '.NGN_ENV_PATH.'/pm/pm.php';
     $tst = 'php '.NGN_ENV_PATH.'/tst/tst.php';
-    //print "\n\n$pm\n\n";
     print `$pm localServer createTestProject`;
-    //print `$pm localServer createTestProject`;
-    return;
     $filterNames = $filterNames ? ' '.$filterNames : '';
     print `$tst proj g test$filterNames`;
   }

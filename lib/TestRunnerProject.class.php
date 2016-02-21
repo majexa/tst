@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Test runner for: Projects Envirnments Tests
+ * Test runner for: Projects Environment Tests
  */
 class TestRunnerProject extends TestRunnerAbstract {
 
