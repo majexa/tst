@@ -35,7 +35,7 @@ class TestRunnerAbstract {
     $this->suite->addTestSuite($rc);
   }
 
-  protected function getClasses() {
+  function getClasses() {
     $filter = false;
     if (isset($this->filterPrefix)) {
       $filter = function ($class) {

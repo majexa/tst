@@ -23,7 +23,7 @@ class TestCliCommon {
       $columns[0][] = ClassCore::classToName('Test', $class);
     }
     $columns[1][] ='tst ngn run:';
-    foreach ((new TestRunnerNgn)->_getClasses() as $class) {
+    foreach ((new TestRunnerNgn)->getClasses() as $class) {
       $columns[1][] = ClassCore::classToName('Test', $class);
     }
     foreach ($this->getTestLibs() as $name) {

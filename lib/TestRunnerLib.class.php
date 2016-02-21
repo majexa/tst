@@ -19,7 +19,7 @@ class TestRunnerLib extends TestRunnerNgn {
     parent::__construct($filterNames);
   }
 
-  protected function getClasses() {
+  function getClasses() {
     return array_filter(parent::getClasses(), function($v) {
       return strstr(Lib::getClassPath($v), $this->libPath);
     });

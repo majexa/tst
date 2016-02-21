@@ -18,7 +18,7 @@ class TestRunnerProject extends TestRunnerAbstract {
     ]);
   }
 
-  protected function getClasses() {
+  function getClasses() {
     return array_filter(parent::getClasses(), function ($class) {
       $r = ClassCore::hasAncestor($class, 'ProjectTestCase');
       return $r;
