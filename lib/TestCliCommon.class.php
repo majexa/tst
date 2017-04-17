@@ -26,8 +26,9 @@ class TestCliCommon {
     foreach ((new TestRunnerNgn)->getClasses() as $class) {
       $columns[1][] = ClassCore::classToName('Test', $class);
     }
+    $columns[2][] = 'tst lib:';
     foreach ($this->getTestLibs() as $name) {
-      $columns[2][] = "tst lib $name";
+      $columns[2][] = $name;
     }
     print Cli::columns($columns, true);
   }

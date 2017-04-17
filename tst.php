@@ -25,5 +25,7 @@ if (isset($_SERVER['argv'][1]) and ($_SERVER['argv'][1] == 'proj' or $_SERVER['a
 else {
   $includes = 'tst';
   if (isset($_SERVER['argv'][1]) and $_SERVER['argv'][1] == 'lib') $includes .= ','.$_SERVER['argv'][2];
+  $params = str_replace('lib ', 'lib run ', $params);
+  print ("$run \"new CliTestRunner('$params')\" $includes\n");
   print `$run "new CliTestRunner('$params')" $includes`;
 }
