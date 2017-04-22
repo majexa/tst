@@ -67,13 +67,17 @@ class TestRunnerAbstract {
     $this->__run();
   }
 
+  protected function printer() {
+    return new CliTestPrinter;
+  }
+
   protected function __run() {
-    PHPUnit_TextUI_TestRunner::run($this->suite, [
+    $result = PHPUnit_TextUI_TestRunner::run($this->suite, [
       'stopOnError' => true,
-      'printer' => new CliTestPrinter
-      //'listeners'   => [
-      //]
+      'printer' => $this->printer()
+      //'listeners'   => []
     ]);
+    if ($result->errorCount()) exit(1);
   }
 
   static $folder;

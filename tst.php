@@ -17,7 +17,8 @@ if (isset($_SERVER['argv'][1]) and ($_SERVER['argv'][1] == 'proj' or $_SERVER['a
   else $includes = ' tst';
   $cmd = "$run site {$_SERVER['argv'][3 + $offset]} \"new CliTestRunner('$params')\"$includes";
   print "$cmd\n";
-  print `$cmd`;
+  system($cmd, $exitCode);
+  if ($exitCode) exit($exitCode);
 }
 else {
   $includes = 'tst';

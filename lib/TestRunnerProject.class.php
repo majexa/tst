@@ -12,10 +12,8 @@ class TestRunnerProject extends TestRunnerAbstract {
     parent::__construct($filterNames);
   }
 
-  protected function __run() {
-    PHPUnit_TextUI_TestRunner::run($this->suite, [
-      'printer' => new ProjectTestPrinter($this->projectName)
-    ]);
+  protected function printer() {
+    return new ProjectTestPrinter($this->projectName);
   }
 
   function getClasses() {
