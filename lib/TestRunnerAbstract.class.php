@@ -77,7 +77,7 @@ class TestRunnerAbstract {
       'printer' => $this->printer()
       //'listeners'   => []
     ]);
-    if ($result->errorCount()) exit(1);
+    if ($result->failureCount() or $result->errorCount()) exit(1);
   }
 
   static $folder;
